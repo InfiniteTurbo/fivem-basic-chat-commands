@@ -1,0 +1,35 @@
+RegisterNetEvent('message:inDistanceZone')
+AddEventHandler('message:inDistanceZone', function(target, message)
+    local _source = source
+	TriggerClientEvent('chatMessage', target, "ME | " .. GetPlayerName(_source), {255, 0, 0}, message)
+end)
+
+RegisterServerEvent('me')
+AddEventHandler('me', function(param)
+  print('^8[LOCAL] ^2[Me]^7:'.. param)
+  TriggerClientEvent('chatMessage', -1, ' ' .. GetPlayerName(_source) ': ^8[LOCAL] ^2[Me^7]^7', {0,0,0} --[[ this table is just rgb ]], param)
+end)
+
+RegisterServerEvent('ooc')
+AddEventHandler('ooc', function(param)
+  print('^8[LOCAL] ^2[Out of Character]^9:'.. param)
+  TriggerClientEvent('chatMessage', -1, ' ' .. GetPlayerName(_source) ': ^8[LOCAL] ^2[Out of Character]^7', {0,0,0} --[[ this table is just rgb ]], param)
+end)
+
+RegisterServerEvent('gooc')
+AddEventHandler('gooc', function(param)
+  print('^2[Out of Character]^9: '.. param)
+  TriggerClientEvent('chatMessage', -1, ' ' .. GetPlayerName(_source) ': ^2[Out of Character]^7', {0,0,0} --[[ this table is just rgb ]], param)
+end)
+
+RegisterServerEvent('deepweb')
+AddEventHandler('deepweb', function(param)
+  print('^9[Deep Web]^6: '.. param)
+  TriggerClientEvent('chatMessage', -1, '^9[Deep Web]^6', {0,0,0} --[[ this table is just rgb ]], param)
+end)
+
+RegisterServerEvent('tweet')
+AddEventHandler('tweet', function(param)
+  print('^5[Twotter]^9: '.. param)
+  TriggerClientEvent('chatMessage', -1, '^5[Twotter]^9', {0,0,0} --[[ this table is just rgb ]], param)
+end)
